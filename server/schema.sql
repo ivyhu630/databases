@@ -4,7 +4,7 @@ USE `chat`;
 
 CREATE TABLE rooms (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL
+  `name` VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE `users` (
