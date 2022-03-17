@@ -18,7 +18,6 @@ module.exports = {
         console.log(err);
       } else {
         res.status(201);
-        // console.log("this is " + results);
         res.end(JSON.stringify(results));
       }
     });
