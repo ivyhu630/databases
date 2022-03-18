@@ -3,27 +3,19 @@ var models = require('../models');
 module.exports = {
 
   get: function (req, res) {
-    models.users.getAll((err, results) =>{
-      if (err) {
-        res.status(500);
-        res.end(err);
-      } else {
+    models.users.getAll()
+      .then((results) => {
         res.status(201);
-        console.log(results);
         res.end(JSON.stringify(results));
-      }
-    });
+      });
+
   },
   post: function (req, res) {
-
-    models.users.create(req.body, (err, results) => {
-      if (err) {
-        console.log(err);
-      } else {
+    models.users.create(req.body)
+      .then(()=> {
         res.status(201);
-        res.end(JSON.stringify(results));
-      }
-    });
+        res.end('end');
+      });
   }
 };
 
